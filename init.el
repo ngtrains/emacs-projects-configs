@@ -1,6 +1,7 @@
 (setq auto-save-default nil
-     auto-save-list-file-prefix nil
-     make-backup-files nil)
+      auto-save-list-file-prefix nil
+      make-backup-files nil
+      inhibit-startup-screen t)
 
 (xterm-mouse-mode 1)
 (global-set-key (kbd "<wheel-up>") 'scroll-down-line)
@@ -10,8 +11,9 @@
 
 (cua-mode 1)
 (global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-o") 'find-file)
+(global-set-key (kbd "C-o") 'find-file-other-tab)
 (global-set-key (kbd "C-q") #'save-buffers-kill-terminal)
+
 
 
 (defun my/close-buffers-of-current-tab ()
