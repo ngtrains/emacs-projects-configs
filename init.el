@@ -42,3 +42,13 @@
       (call-process-region (point-min) (point-max) "clip.exe"))))
 
 (advice-add 'kill-new :after #'my/wsl-sync-kill-ring-to-clipboard)
+
+
+
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+(with-eval-after-load 'dired
+  (define-key dired-mode-map [mouse-1] #'dired-find-alternate-file)
+  (define-key dired-mode-map [mouse-2] #'dired-find-alternate-file))
+
